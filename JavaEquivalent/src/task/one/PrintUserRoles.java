@@ -4,7 +4,7 @@ import java.util.Optional;
 public class PrintUserRoles {
 	
 	private static void printRoles(User user){
-		Optional.of(user).map(User::getRoles).get().forEach(System.out::println);
+		Optional.ofNullable(user).map(User::getRoles).ifPresent(l -> l.forEach(System.out::println));
 	}
 
 	public static void main(String args[]) {
